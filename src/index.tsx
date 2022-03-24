@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { CityProvider } from './providers/CityProvider';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CityProvider>
+      <App />
+    </CityProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
