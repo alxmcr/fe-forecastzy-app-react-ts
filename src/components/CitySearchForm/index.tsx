@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { StatusOperation } from "../../@types/apiTypes";
 import { CityContext } from "../../providers/CityProvider";
 
 interface ICitySearchFormProps {
@@ -6,7 +7,17 @@ interface ICitySearchFormProps {
 }
 
 export default function CitySearchForm({ onSearchCity }: ICitySearchFormProps) {
-  const { cityName, setCityName } = useContext(CityContext);
+  const { setCity, cityName, setCityName, setStatusCity, setErrorMessageCity } =
+    useContext(CityContext);
+
+  const handlerCityNameChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setCityName(event.target.value);
+    setCity(undefined);
+    setStatusCity(StatusOperation.IDLE);
+    setErrorMessageCity("");
+  };
 
   return (
     <form className="search" onSubmit={onSearchCity}>
@@ -15,12 +26,12 @@ export default function CitySearchForm({ onSearchCity }: ICitySearchFormProps) {
           City
         </label>
         <input
-          type="text"
+          type="search"
           id="city"
           className="search__input"
           placeholder="Enter a city name..."
           value={cityName}
-          onChange={(e) => setCityName(e.target.value)}
+          onChange={handlerCityNameChange}
           required
         />
       </div>
