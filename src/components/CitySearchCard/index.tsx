@@ -14,7 +14,9 @@ export default function CitySearchCard() {
     setErrorMessageCity,
   } = useContext(CityContext);
 
-  const handleCitySearchForm = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleCitySearchForm = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
 
     let abortController: AbortController | null = null;
@@ -42,7 +44,9 @@ export default function CitySearchCard() {
 
   return (
     <article className="search-card">
-      <h2 className="search-card__title">Search for a city</h2>
+      <h2 className="search-card__title">
+        Find out the next forecasts for some city
+      </h2>
       <CitySearchForm onSearchCity={handleCitySearchForm} />
       {statusCity === StatusOperation.ERROR ? <p>{errorMessageCity}</p> : null}
     </article>
