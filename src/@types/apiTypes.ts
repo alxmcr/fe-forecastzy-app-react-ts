@@ -1,5 +1,12 @@
 import { IDailyForecast, IForecastCurrent } from "./appTypes";
 
+export enum StatusOperation {
+    PENDING = "pending",
+    SUCCESS = "success",
+    ERROR = "error",
+    IDLE = "idle",
+}
+
 export interface IForecastsRequest {
     signal: AbortSignal;
     latitude: number;
@@ -15,4 +22,11 @@ export interface IForecastsResponse {
     timezone_offset: number
     current: IForecastCurrent
     daily: IDailyForecast[]
+}
+
+export interface IForecastsURLParams {
+    latitude: number;
+    longitude: number;
+    units: "metric" | "imperial";
+    exclude?: string;
 }
