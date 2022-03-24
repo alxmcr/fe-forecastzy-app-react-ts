@@ -1,0 +1,34 @@
+[
+  {
+    "id": 19,
+    "slug": "monterrey",
+    "city_slug": "monterrey",
+    "display": "Monterrey",
+    "ascii_display": "monterrey",
+    "city_name": "Monterrey",
+    "city_ascii_name": "monterrey",
+    "state": "Nuevo León",
+    "country": "México",
+    "lat": "25.6866142",
+    "long": "-100.3161126",
+    "result_type": "city",
+    "popularity": "0.365111433802639",
+    "sort_criteria": 0.7460445735210556
+  },
+  {
+    "id": 8934,
+    "slug": "mty",
+    "city_slug": "monterrey",
+    "display": "General Mariano Escobedo Intl",
+    "ascii_display": "General Mariano Escobedo Intl",
+    "city_name": "Monterrey",
+    "city_ascii_name": "monterrey",
+    "state": "Nuevo León",
+    "country": "México",
+    "lat": "25.778489",
+    "long": "-100.106878",
+    "result_type": "airport",
+    "popularity": "0.05476671507039585",
+    "sort_criteria": 0.6219066860281584
+  }
+]
