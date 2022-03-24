@@ -13,7 +13,7 @@ export default function DailyForecastList({
   }
 
   return (
-    <div className="forecasts">
+    <div className="daily-forecasts">
       {dailyForecasts.map((dailyForecast) => (
         <DailyForecastCard
           key={dailyForecast.dt}
