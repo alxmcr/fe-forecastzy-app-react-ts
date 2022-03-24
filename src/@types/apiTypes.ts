@@ -1,4 +1,4 @@
-import { IDailyForecast, IForecastCurrent } from "./appTypes";
+import { IDailyForecast, IForecastCurrent, IPlace } from "./appTypes";
 
 export enum StatusOperation {
     PENDING = "pending",
@@ -29,4 +29,17 @@ export interface IForecastsURLParams {
     longitude: number;
     units: "metric" | "imperial";
     exclude?: string;
+}
+
+export interface IPlacesRequest {
+    signal: AbortSignal;
+    query: string;
+}
+
+export interface IPlacesResponse {
+    places: IPlace[]
+}
+
+export interface IPlacesURLParams {
+    query: string;
 }
