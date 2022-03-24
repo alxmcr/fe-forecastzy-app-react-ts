@@ -1,4 +1,5 @@
-import { IForecastsURLParams } from "../@types/apiTypes";
+import { IForecastsURLParams, IPlacesURLParams } from "../@types/apiTypes";
+import { IPlace } from "../@types/appTypes";
 import { appConfig } from "../config";
 
 export const generateURLForecasts = ({ latitude = 0, longitude = 0, units = "metric", exclude = "hourly,minutely,alerts" }: IForecastsURLParams): string => {
@@ -30,4 +31,22 @@ export const generateURLForecasts = ({ latitude = 0, longitude = 0, units = "met
     url.search = searchParams.toString();
 
     return url.toString();
+}
+
+export const generateURLPlaces = ({ query = "" }: IPlacesURLParams): string => {
+    let url = new URL(appConfig?.ENDPOINT_PLACES_API);
+
+    let searchParams = new URLSearchParams();
+
+    if (query !== null && query !== undefined) {
+        searchParams.append("q", query)
+    }
+
+    url.search = searchParams.toString();
+
+    return url.toString();
+}
+
+export const firstPlaceAsType = ({ places = [], type = "" }: { places: IPlace[], type: string }): IPlace | undefined => {
+    return places.find(place => place.result_type === type);
 }

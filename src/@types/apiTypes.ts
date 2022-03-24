@@ -36,10 +36,6 @@ export interface IPlacesRequest {
     query: string;
 }
 
-export interface IPlacesResponse {
-    places: IPlace[]
-}
-
 export interface IPlacesURLParams {
     query: string;
 }
