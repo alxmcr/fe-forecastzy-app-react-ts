@@ -9,16 +9,16 @@ export default function DailyForecastSection() {
   const { forecasts, statusForecasts, errorMessageForecasts } =
     useDailyForecasts(city);
 
+  if (!city || !forecasts) {
+    return null;
+  }
+
   if (statusForecasts === StatusOperation.PENDING) {
     return <div>Loading daily forecasts...</div>;
   }
 
   if (statusForecasts === StatusOperation.ERROR) {
     return <div>{errorMessageForecasts}</div>;
-  }
-
-  if (!city || !forecasts) {
-    return null;
   }
 
   return (
