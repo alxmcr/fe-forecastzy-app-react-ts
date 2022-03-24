@@ -1,4 +1,4 @@
-import { IDailyForecast, IForecastCurrent, IPlace } from "./appTypes";
+import { IDailyForecast, IForecastCurrent } from "./appTypes";
 
 export enum StatusOperation {
     PENDING = "pending",
