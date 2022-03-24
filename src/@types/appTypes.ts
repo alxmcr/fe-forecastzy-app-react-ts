@@ -38,6 +38,23 @@ export interface IForecastWeather {
     icon: string
 }
 
+export interface IForecastCurrent {
+    dt: number,
+    sunrise: number,
+    sunset: number,
+    temp: number,
+    feels_like: number,
+    pressure: number,
+    humidity: number,
+    dew_point: number,
+    uvi: number,
+    clouds: number,
+    visibility: number,
+    wind_speed: number,
+    wind_deg: number,
+    weather: IForecastWeather[],
+}
+
 export interface IPlace {
     id: number,
     slug: string,
