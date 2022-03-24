@@ -71,3 +71,9 @@ export interface IPlace {
     popularity: string,
     sort_criteria: number
 }
+
+export interface IUseForecastsParams {
+    latitude: number;
+    longitude: number;
+    units: "metric" | "imperial";
+}
