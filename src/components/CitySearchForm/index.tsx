@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { StatusOperation } from "../../@types/apiTypes";
 import { CityContext } from "../../providers/CityProvider";
+import "./CitySearchForm.scss";
 
 interface ICitySearchFormProps {
   onSearchCity: (event: React.FormEvent<HTMLFormElement>) => void;
@@ -20,22 +21,24 @@ export default function CitySearchForm({ onSearchCity }: ICitySearchFormProps) {
   };
 
   return (
-    <form className="search" onSubmit={onSearchCity}>
-      <div className="search__inputgroup">
-        <label htmlFor="city" className="search__label">
+    <form className="search-form" onSubmit={onSearchCity} autoComplete="off">
+      <div className="search-form__inputgroup">
+        <label htmlFor="city" className="search-form__label">
           City
         </label>
         <input
           type="search"
           id="city"
-          className="search__input"
+          className="search-form__input"
           placeholder="Enter a city name..."
           value={cityName}
           onChange={handlerCityNameChange}
           required
         />
       </div>
-      <button type="submit">Search</button>
+      <button type="submit" className="search-form__button">
+        Search
+      </button>
     </form>
   );
 }

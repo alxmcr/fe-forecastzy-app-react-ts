@@ -1,0 +1,33 @@
+@import "../../variables";
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  &__button {
+    appearance: none;
+    background-color: $primary;
+    border: none;
+    border-radius: 0.5rem;
+    display: block;
+    padding: 0.5rem;
+    width: 100%;
+    &:hover {
+      background-color: $secondary;
+      transform: scale(1.02);
+    }
+  }
+  &__input {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    &:focus {
+      border: 1px solid $primary;
+    }
+  }
+  &__label {
+    display: block;
+  }
+}
