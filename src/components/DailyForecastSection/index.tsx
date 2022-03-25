@@ -3,6 +3,7 @@ import { CityContext } from "../../providers/CityProvider";
 import useDailyForecasts from "../../hooks/useDailyForecasts";
 import DailyForecastList from "../DailyForecastList";
 import { StatusOperation } from "../../@types/apiTypes";
+import "./DailyForecastSection.scss"
 
 export default function DailyForecastSection() {
   const { cityName, city } = useContext(CityContext);
@@ -22,8 +23,8 @@ export default function DailyForecastSection() {
   }
 
   return (
-    <section className="forecasts">
-      <h2 className="forecasts__city">{cityName}</h2>
+    <section className="daily-forecasts">
+      <h2 className="daily-forecasts__city">{cityName}</h2>
       <DailyForecastList dailyForecasts={forecasts} />
     </section>
   );

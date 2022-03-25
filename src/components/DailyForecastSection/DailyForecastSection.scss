@@ -1,0 +1,9 @@
+@import "../../variables";
+
+.daily-forecasts {
+  margin: 0.5rem 0;
+  &__city {
+    color: $primary;
+    text-align: center;
+  }
+}
