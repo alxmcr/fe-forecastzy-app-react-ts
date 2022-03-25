@@ -13,7 +13,7 @@ export async function handlerPlaces(request: IPlacesRequest): Promise<IPlace[]> 
     const url = generateURLPlaces(urlParams);
     const response: Response = await fetch(url, requestOptions)
 
-    if (response.status === 200) {
+    if (response.status === 201) {
         return response.json();
     }
 
