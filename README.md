@@ -1,46 +1,99 @@
-# Getting Started with Create React App
+# Forecastzy App ☀️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In Reservamos we're always looking for ways to help our users have the best
+experience when looking for travel options so that they can make the best
+decision when reserving a bus or flight ticket. To accomplish this, we have to
+make an app where the users can check the weather forecast for the
+destinations available in Reservamos 🚍.
 
-## Available Scripts
+The web app's functionality is to be able to compare the weather forecast for
+the next 7 days, by day, of different destinations offered by Reservamos. The
+user must be able to input the name of cities and see the maximum and
+minimum temperature for these places
 
-In the project directory, you can run:
+![App Screenshot](https://res.cloudinary.com/images-alex-projects/image/upload/v1648172604/Portfolio/forecastzy-app/desktop-forecastzy_ygmttv.png)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Search forecasts by city name
+- Compare the weather forecast for the next 7 days, by day, of different
+  destinations offered by Reservamos
+- Mobile & Desktop version
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Run Locally
 
-### `npm test`
+Clone the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+  git clone https://github.com/alxmcr/forecastzy-app
+```
 
-### `npm run build`
+Go to the project's directory
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  cd forecastzy-app
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install the dependencies using NPM:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+  npm install
+```
 
-### `npm run eject`
+Start the Frontend server:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+  npm run start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Open the browser:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+http://localhost:3000
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Environment Variables
 
-## Learn More
+We use the following environment variables to configure the app:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+REACT_APP_OPEN_WEATHER_MAP_API_KEY=your-open-weather-api-key
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can get `your-open-weather-api-key` from [Open Weather Map](https://openweathermap.org/api)
+
+We need to set the `REACT_APP_OPEN_WEATHER_MAP_API_KEY` environment variable in a file called `.env` in the project's root directory. You can find the `.env-sample` file in the repository's root directory as guide.
+
+## Tech Stack
+
+- `@testing-library/jest-dom`: `"^5.16.3"`,
+- `@testing-library/react`: `"^12.1.4"`,
+- `@testing-library/user-event`: `"^13.5.0"`,
+- `@types/jest`: `"^27.4.1"`,
+- `@types/node`: `"^16.11.26"`,
+- `@types/react`: `"^17.0.42"`,
+- `@types/react-dom`: `"^17.0.14"`,
+- `react`: `"^17.0.2"`,
+- `react-dom`: `"^17.0.2"`,
+- `react-scripts`: `"5.0.0"`,
+- `typescript`: `"^4.6.2"`,
+- `web-vitals`: `"^2.1.4`"
+- `sass`: `"^1.49.9`"
+
+## Screenshoots
+
+![App Screenshot - Mobile](https://res.cloudinary.com/images-alex-projects/image/upload/v1648172604/Portfolio/forecastzy-app/mobile-forecastzy_pepqmy.png)
+
+![App Screenshot - Desktop](https://res.cloudinary.com/images-alex-projects/image/upload/v1648172604/Portfolio/forecastzy-app/desktop-forecastzy_ygmttv.png)
+
+## Demo
+
+[https://forecastzy-app.netlify.app/](https://forecastzy-app.netlify.app/)
+
+## Authors
+
+- [Alejandro M. Coca Rojas (@alxmcr)](https://www.github.com/alxmcr)
+
+## Feedback
+
+If you have any feedback, please reach out to me at amcocarojas@gmail.com.
