@@ -3,6 +3,7 @@ import { IPlacesRequest, StatusOperation } from "../../@types/apiTypes";
 import handlerCity from "../../api/cities";
 import { CityContext } from "../../providers/CityProvider";
 import CitySearchForm from "../CitySearchForm";
+import "./CitySearchCard.scss";
 
 export default function CitySearchCard() {
   const {
@@ -48,7 +49,11 @@ export default function CitySearchCard() {
         Find out the next forecasts for some city
       </h2>
       <CitySearchForm onSearchCity={handleCitySearchForm} />
-      {statusCity === StatusOperation.ERROR ? <p>{errorMessageCity}</p> : null}
+      {statusCity === StatusOperation.ERROR ? (
+        <p className="search-card__message search-card__message--error">
+          {errorMessageCity}
+        </p>
+      ) : null}
     </article>
   );
 }
