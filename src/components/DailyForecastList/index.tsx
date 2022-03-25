@@ -10,11 +10,15 @@ export default function DailyForecastList({
   dailyForecasts = [],
 }: IDailyForecastListProps) {
   if (dailyForecasts.length === 0) {
-    return <p>No daily forecasts</p>;
+    return (
+      <p className="daily-forecasts__message daily-forecasts__message--error">
+        There were daily forecasts results. Please, try again with another city.
+      </p>
+    );
   }
 
   return (
-    <div className="daily-forecasts-list">
+    <div className="daily-forecasts__list">
       {dailyForecasts.map((dailyForecast) => (
         <DailyForecastCard
           key={dailyForecast.dt}
