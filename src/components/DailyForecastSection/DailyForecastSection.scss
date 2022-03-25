@@ -1,9 +1,13 @@
 @import "../../variables";
 
-.daily-forecasts {
+.daily-forecasts-section {
   margin: 0.5rem 0;
   &__city {
     color: $primary;
     text-align: center;
+  }
+  &__message {
+    text-align: center;
+    padding: 1rem 0;
   }
 }
