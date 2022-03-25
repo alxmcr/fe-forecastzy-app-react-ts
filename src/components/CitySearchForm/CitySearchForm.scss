@@ -27,6 +27,11 @@
       border: 1px solid $primary;
     }
   }
+  &__inputgroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
   &__label {
     display: block;
   }

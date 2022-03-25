@@ -3,3 +3,10 @@
     text-align: center;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .search-card {
+    margin: 0 auto;
+    width: 50%;
+  }
+}
