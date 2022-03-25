@@ -1,5 +1,6 @@
 import { IDailyForecast } from "../../@types/appTypes";
 import DailyForecastCard from "../DailyForecastCard";
+import "./DailyForecastList.scss";
 
 interface IDailyForecastListProps {
   dailyForecasts: IDailyForecast[];
@@ -13,7 +14,7 @@ export default function DailyForecastList({
   }
 
   return (
-    <div className="daily-forecasts">
+    <div className="daily-forecasts-list">
       {dailyForecasts.map((dailyForecast) => (
         <DailyForecastCard
           key={dailyForecast.dt}
