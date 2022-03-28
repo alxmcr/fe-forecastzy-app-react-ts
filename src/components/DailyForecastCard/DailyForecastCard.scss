@@ -12,14 +12,20 @@
     margin: 0;
     padding: 0.5rem;
   }
+  &__humidity,
   &__temperature {
     align-items: center;
+    color: $primary;
     display: flex;
     flex-direction: column;
   }
+  &__humidity {
+    &--max {
+      color: #ff5100;
+    }
+  }
   &__value {
     font-size: 2rem;
-    color: $primary;
     font-weight: 600;
   }
 }

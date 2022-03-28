@@ -1,5 +1,5 @@
 import { IForecastsURLParams, IPlacesURLParams } from "../@types/apiTypes";
-import { IPlace } from "../@types/appTypes";
+import { IDailyForecast, IPlace } from "../@types/appTypes";
 import { appConfig } from "../config";
 
 export const generateURLForecasts = ({ latitude = 0, longitude = 0, units = "metric", exclude = "hourly,minutely,alerts" }: IForecastsURLParams): string => {
@@ -49,4 +49,18 @@ export const generateURLPlaces = ({ query = "" }: IPlacesURLParams): string => {
 
 export const firstPlaceAsType = ({ places = [], type = "" }: { places: IPlace[], type: string }): IPlace | undefined => {
     return places.find(place => place.result_type === type);
+}
+
+export const getDTWithMaxHumitidy = (forecasts: IDailyForecast[] = []): number => {
+    let maxHumidity = 0;
+    let dtMaxHumidity = 0;
+
+    forecasts.forEach(forecast => {
+        if (forecast.humidity > maxHumidity) {
+            maxHumidity = forecast.humidity;
+            dtMaxHumidity = forecast.dt;
+        }
+    })
+
+    return dtMaxHumidity;
 }

@@ -1,4 +1,5 @@
 import { IDailyForecast } from "../../@types/appTypes";
+import { getDTWithMaxHumitidy } from "../../helpers/apiHelpers";
 import DailyForecastCard from "../DailyForecastCard";
 import "./DailyForecastList.scss";
 
@@ -9,6 +10,7 @@ interface IDailyForecastListProps {
 export default function DailyForecastList({
   dailyForecasts = [],
 }: IDailyForecastListProps) {
+
   if (dailyForecasts.length === 0) {
     return (
       <p className="daily-forecasts__message daily-forecasts__message--error">
@@ -23,6 +25,7 @@ export default function DailyForecastList({
         <DailyForecastCard
           key={dailyForecast.dt}
           dailyForecast={dailyForecast}
+          isMaxHumidity={getDTWithMaxHumitidy(dailyForecasts) === dailyForecast.dt}
         />
       ))}
     </div>
